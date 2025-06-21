@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://developer.apple.com/ns/objc/coredatamodel">
+    <versionHash>0x3A5F89D8</versionHash>
+    
+    <entity name="Avatar" representedClassName="Avatar" syncable="YES">
+        <attribute name="id" attributeType="UUID" optional="NO"/>
+        <attribute name="name" attributeType="String" optional="NO"/>
+        <attribute name="hairStyle" attributeType="String" optional="YES"/>
+        <attribute name="outfit" attributeType="String" optional="YES"/>
+        <attribute name="accessory" attributeType="String" optional="YES"/>
+        <relationship name="missions" destinationEntity="Mission" toMany="YES" deleteRule="Nullify"/>
+        <relationship name="user" destinationEntity="User" toOne="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="Mission" representedClassName="Mission" syncable="YES">
+        <attribute name="id" attributeType="UUID" optional="NO"/>
+        <attribute name="name" attributeType="String" optional="NO"/>
+        <attribute name="description" attributeType="String" optional="YES"/>
+        <attribute name="isCompleted" attributeType="Boolean" optional="YES"/>
+        <attribute name="completionDate" attributeType="Date" optional="YES"/>
+        <relationship name="reward" destinationEntity="Reward" toOne="YES" deleteRule="Cascade"/>
+        <relationship name="user" destinationEntity="User" toOne="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="userId" attributeType="UUID" optional="NO"/>
+        <attribute name="username" attributeType="String" optional="NO"/>
+        <attribute name="email" attributeType="String" optional="YES"/>
+        <relationship name="avatar" destinationEntity="Avatar" toOne="YES" deleteRule="Cascade"/>
+        <relationship name="missions" destinationEntity="Mission" toMany="YES" deleteRule="Nullify"/>
+        <relationship name="rewards" destinationEntity="Reward" toMany="YES" deleteRule="Nullify"/>
+        <relationship name="locations" destinationEntity="Location" toMany="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="Reward" representedClassName="Reward" syncable="YES">
+        <attribute name="rewardId" attributeType="UUID" optional="NO"/>
+        <attribute name="name" attributeType="String" optional="NO"/>
+        <attribute name="points" attributeType="Integer" optional="NO"/>
+        <relationship name="missions" destinationEntity="Mission" toMany="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="Location" representedClassName="Location" syncable="YES">
+        <attribute name="id" attributeType="UUID" optional="NO"/>
+        <attribute name="name" attributeType="String" optional="NO"/>
+        <attribute name="latitude" attributeType="Double" optional="YES"/>
+        <attribute name="longitude" attributeType="Double" optional="YES"/>
+        <relationship name="missions" destinationEntity="Mission" toMany="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="GameProgress" representedClassName="GameProgress" syncable="YES">
+        <relationship name="user" destinationEntity="User" toOne="YES" deleteRule="Nullify"/>
+        <relationship name="currentMission" destinationEntity="Mission" toOne="YES" deleteRule="Nullify"/>
+        <attribute name="progressPercentage" attributeType="Double" optional="NO"/>
+    </entity>
+
+    <entity name="Achievement" representedClassName="Achievement" syncable="YES">
+        <attribute name="achievementId" attributeType="UUID" optional="NO"/>
+        <attribute name="title" attributeType="String" optional="NO"/>
+        <attribute name="description" attributeType="String" optional="YES"/>
+        <attribute name="dateEarned" attributeType="Date" optional="YES"/>
+        <relationship name="user" destinationEntity="User" toOne="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="Country" representedClassName="Country" syncable="YES">
+        <attribute name="countryId" attributeType="UUID" optional="NO"/>
+        <attribute name="name" attributeType="String" optional="NO"/>
+        <attribute name="flagImage" attributeType="String" optional="YES"/>
+        <attribute name="region" attributeType="String" optional="YES"/>
+        <relationship name="missions" destinationEntity="Mission" toMany="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="CountryARScene" representedClassName="CountryARScene" syncable="YES">
+        <attribute name="sceneId" attributeType="UUID" optional="NO"/>
+        <attribute name="sceneName" attributeType="String" optional="NO"/>
+        <attribute name="sceneType" attributeType="String" optional="YES"/>
+        <relationship name="country" destinationEntity="Country" toOne="YES" deleteRule="Nullify"/>
+    </entity>
+
+    <entity name="UserSettings" representedClassName="UserSettings" syncable="YES">
+        <attribute name="settingId" attributeType="UUID" optional="NO"/>
+        <attribute name="darkModeEnabled" attributeType="Boolean" optional="NO"/>
+        <attribute name="notificationsEnabled" attributeType="Boolean" optional="NO"/>
+        <attribute name="languagePreference" attributeType="String" optional="YES"/>
+        <relationship name="user" destinationEntity="User" toOne="YES" deleteRule="Cascade"/>
+    </entity>
+
+    <entity name="AchievementProgress" representedClassName="AchievementProgress" syncable="YES">
+        <relationship name="achievement" destinationEntity="Achievement" toOne="YES" deleteRule="Nullify"/>
+        <relationship name="user" destinationEntity="User" toOne="YES" deleteRule="Nullify"/>
+        <attribute name="progressPercentage" attributeType="Double" optional="NO"/>
+        <attribute name="dateStarted" attributeType="Date" optional="YES"/>
+        <attribute name="dateCompleted" attributeType="Date" optional="YES"/>
+    </entity>
+
+    <entity name="ActivityLog" representedClassName="ActivityLog" syncable="YES">
+        <attribute name="logId" attributeType="UUID" optional="NO"/>
+        <attribute name="activityType" attributeType="String" optional="NO"/>
+        <attribute name="activityDescription" attributeType="String" optional="YES"/>
+        <attribute name="timestamp" attributeType="Date" optional="NO"/>
+        <relationship name="user" destinationEntity="User" toOne="YES" deleteRule="Nullify"/>
+    </entity>
+</model>
+// Placeholder for \(file) content.
