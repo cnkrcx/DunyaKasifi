@@ -1,5 +1,6 @@
-# DunyaKasifi
-Dünya Kaşifi, çocuklara ülkeleri ve kültürleri eğlenceli bir şekilde öğreten artırılmış gerçeklik temelli bir iOS uygulamasıdır
+Dünya Kaşifi - Artırılmış Gerçeklik Temelli Eğitim Uygulaması (Swift ile Geliştirilmiştir)
+
+Dünya Kaşifi, çocuklara dünyayı ve kültürleri eğlenceli bir şekilde öğretmek amacıyla geliştirilmiş artırılmış gerçeklik (AR) tabanlı bir iOS uygulamasıdır. Swift ile yazılmış olan bu uygulama, çocukların farklı kültürler hakkında bilgi edinirken AR ile etkileşimde bulunmalarını sağlar. Eğitimsel içeriğin yanı sıra, mini oyunlar ve keşif görevleriyle kullanıcılar keşfederek öğrenir.
 
 Ana Özellikler:
 🏛️ 3D Tarihi Yapılar ile Keşif:
@@ -8,7 +9,7 @@ AR ile 3D Tarihi Yapılar: Ayasofya, Eyfel Kulesi, Kolezyum ve daha fazlası AR 
 Dinamik Model Yükleme: Kullanıcılar AR alanına yeni modeller yükleyerek gerçek dünyada etkileşimli içerikler oluşturur.
 🌎 Kültürel Keşifler:
 
-50+ Ülke Kültürü: Dünya çapında 50'den fazla ülkenin kültürünü keşfedin.
+50+ Ülke Kültürü: Dünya çapında 50'den fazla ülkenin kültürlerine dair bilgiler interaktif bir şekilde sunulur.
 İnteraktif Bilgiler: Her ülkenin mutfağından geleneklerine kadar detaylı kültürel içerikler sağlanır. Çocuklar ülkelerin tarihini, geleneksel yemeklerini ve sembollerini keşfeder.
 🎮 Eğitici Mini Oyunlar ve Keşif Görevleri:
 
@@ -29,7 +30,7 @@ Sağlıklı Kullanım: Uzun süreli kullanımda göz sağlığını koruyacak ö
 
 
 Teknoloji Yığını:
-SwiftUI: Dinamik ve modern kullanıcı arayüzü geliştirmek için kullanılır.
+SwiftUI: SwiftUI, dinamik ve modern bir kullanıcı arayüzü geliştirmek için kullanılır. Declarative UI yapısı ile daha az kodla daha esnek ve hızlı arayüzler oluşturulmuştur.
 ARKit & RealityKit: ARKit ve RealityKit kullanılarak etkileşimli artırılmış gerçeklik içerikleri sağlanır. Dinamik model yükleme, konumlandırma ve etkileşimli AR içerikleri bu teknolojilerle yapılmaktadır.
 CoreLocation: Kullanıcıların konumunu belirlemek ve konum bazlı içerik sağlamak için CoreLocation kullanılır.
 Combine: Combine framework’u, uygulama içerisindeki veri akışlarını yönetmek için kullanılır. Kullanıcı etkileşimleri ve uygulama durumu yönetimi sağlar.
@@ -42,42 +43,35 @@ State Management: ObservableObject ve @Published kullanılarak uygulama durumlar
 Modüler Yapı: Her bir fonksiyon ve özellik bağımsız olarak geliştirilip modüler bir şekilde eklenebilir. Uygulamanın genişletilmesi ve yeni özelliklerin eklenmesi kolaydır.
 
 
+
 AR Entegrasyonu:
-Etkileşimli 3D Modeller: RealityKit ve ARKit kullanılarak etkileşimli AR içerikleri sağlanır. Kullanıcılar, tarihi yapıları etkileşimli bir şekilde keşfeder.
-Dinamik Model Konumlandırma: Kullanıcı, artırılmış gerçeklik ile nesneleri çevresine yerleştirebilir.
-
-
+RealityKit ve ARKit: RealityKit ve ARKit, AR deneyimi için kullanılır. Bu teknolojiler, dinamik model yükleme ve konumlandırma sağlar.
+Etkileşimli AR İçerikleri: Uygulama, kullanıcıları gerçek dünyada etkileşime geçebilecekleri artırılmış gerçeklik içerikleriyle buluşturur.
 Performans Optimizasyonları:
 Timer Yönetimi: Uygulama, zamanlayıcıları doğru yönetmek için optimize edilmiştir. Görevlerin süresi ve göz sağlığı hatırlatıcıları için doğru zamanlamalar kullanılır.
 Asenkron Yükleme: AR içeriklerinin asenkron yüklenmesi, uygulamanın hızını ve performansını artırır.
-Görünüm Optimizasyonu: Görünüm hiyerarşisi optimize edilerek, uygulama hızlı yükleme sürelerine ve yüksek performansa sahip olur.
-
-
+View Optimizasyonu: Görünüm hiyerarşisi optimize edilerek, uygulama hızlı yükleme sürelerine ve yüksek performansa sahip olur.
 Genişletilebilirlik:
 Yeni Ülkeler ve Görevler: Yeni ülkeler ve görevler kolayca eklenebilir. Kullanıcıların keşfettiği içerik sürekli olarak genişletilebilir.
 Modüler Yapı: Uygulamanın modüler yapısı sayesinde yeni özellikler ve içerikler hızla entegre edilebilir.
 Veri Yönetimi: Merkezi bir veri yönetim sistemi, yeni içeriklerin eklenmesini sağlar.
-
-
 Güvenlik ve Ebeveyn Kontrolleri:
 Süre Sınırlamaları: Ebeveynler, çocuklarının kullanım sürelerini sınırlayabilir.
 İçerik Filtreleme: Uygulama, çocuklar için uygun olmayan içerikleri filtreler.
 Göz Dinlenme Hatırlatıcıları: Ebeveynler, çocuklarının göz sağlığını izleyebilir ve hatırlatıcıları etkinleştirebilir.
 
 
+
 Ön Gereksinimler:
 Mac Bilgisayar: macOS Ventura 13.5 veya üzeri.
-Apple Telefon: Model fark etmez.
 Xcode 15 veya Üzeri: Swift ve SwiftUI ile geliştirme için.
 iOS Simülatörü: Xcode ile birlikte gelir.
 Git: Proje sürüm yönetimi için.
-
-
 Projeyi Açma ve Çalıştırma:
 Xcode'u başlatın.
 "File > Open..." menüsünü seçin.
 İndirdiğiniz proje klasöründeki DunyaKasifi.xcodeproj dosyasını seçin.
-Xcode projeyi yüklediğinde, üst bardan bir simülatör seçin (Önerilen: iPhone 13 Pro Max).
+Xcode projeyi yüklediğinde, üst bardan bir simülatör seçin: Önerilen: iPhone 13 Pro Max (iOS 16.4+)
 Play butonuna (⌘ + R) basarak uygulamayı çalıştırın.
 
 
@@ -133,8 +127,6 @@ NSLocationWhenInUseUsageDescription: Uygulamanın konum bilgilerini kullanma ama
 11. "Incorrect Device Orientation" (Yanlış Cihaz Yönü):
 
 Çözüm: AR içerikleri düzgün bir şekilde yerleşmiyor veya model doğru yerleştirilemiyorsa, cihazın yönüne uygun bir ARSession Configuration kullanıldığından emin olun. Bu özellik için doğru orientation (yön) ayarlarının yapıldığından emin olun.
-
-
 Diğer Çözümler:
 12. Git İle İlgili Hatalar:
 
@@ -145,6 +137,7 @@ Diğer Çözümler:
 14. Xcode Derleme Hataları:
 
 Çözüm: Xcode, bazen eski derlemeleri veya yanlış yapılandırmaları saklayabiliyor. Projeyi temizlemek için ⌘ + Shift + K komutunu kullanarak proje temizleme işlemi yapın.
+
 
 
 Gerçek Cihazda Çalıştırma:
